@@ -1,0 +1,58 @@
+
++TODO:
+  General (yet to be categorised):
+    - Sync dotfiles as opposed to straight up copying them, which always
+      overwrites ~/.* with whatever is in the repo
+    - add function which syncs dotfiles
+    -
+    - alias file in $ENGAGEMENT_DIR/scripts/aliases/ containing these aliases:
+      - $ENGAGEMENT_NAME-ssh => ssh -F $ENGAGEMENT_DIR/.ssh/config
+    - Parameter store heirachy:
+      - /$ENGAGEMENT_NAME/?????
+      - some sort of key for encrypting files in
+        $ENGAGEMENT_DIR/documents/secrets
+        - KMS key?
+        - requires some kind of engagements.conf?
+      - generate:
+        encryption key:
+          - for each file? based on datetime + random salt?
+          - store it in SSM Param Store
+    - >-
+      function which moves a file to secrets directory and encrypts it automatically
+
+  function.d/helpers.sh:
+    - split helpers into it's own repo
+    - >-
+      ^by this same token^ split alias.d, export.d, function.d, path.d into
+      their own repos
+
+bootstrap.sh:
+  - Define and implement a way to specify a list of repos that can be cloned at
+    bootstrap
+  - bootstrap.sh is getting unwieldy:
+    decluttering/maintainability/readability etc:
+      - >-
+        could be decluttered by disassembling the script into smaller scripts
+        and it's own repo (bash-configure)
+    performance:
+      - add option to load functions dynamically, as they're required
+      - add sub-option to unset functions after use?
+      - HOW WOULD THIS EVEN WORK?
+        - >-
+          on bootstrap, read functions, split them into their own files and
+          add them to a "bin" directory which gets added to PATH
+        - >-
+          will add significant overhead to bootstrap (especially as the
+          number of functions grows) but cli load times wont take a hit.
+        - >-
+          'splitting functions into their own files is potentially a massive
+          effort especially if they take params or rely on globals. This
+          only applies if the functions aren't required to be sourced, which is
+          the implication of splitting them into their own files'
+        - 'or add an alias for each function which does the following':
+            - >-
+              'source "/path/to/function.sh" && \
+              run_function && unset -f run_function;'
+          - 'no need to split functions into files or >:^)'
+      - Q: should I do this for exports? aliases?
+        - very tricky, probably not worth it?

@@ -1,0 +1,385 @@
+#!/usr/bin/env bash 
+
+RESET="\e[0m";
+BOLD="\e[1m";
+BLINK="\e[5m";
+BLUE="\e[34m";
+UNDERLINE="\e[4m";
+LIGHT_GRAY="\e[37m"
+LIGHT_CYAN="\e[96m"
+LIGHT_GREEN="\e[1;32m";
+printf "🤣 Hehe hi! let's set up your ${BLINK}${BOLD}MikeBook Pro${RESET} LMAO SMDH 🤣\n";
+echo ""
+printf "${BLINK}✨${RESET}🙏🏽 First, some acknowledgments 🙏🏽${BLINK}✨${RESET}\n"
+printf "${UNDERLINE}${BOLD}A lot${RESET} of the macOS defaults settings come from:\n";
+printf "${LIGHT_CYAN}├─${RESET} https://github.com/mathiasbynens/dotfiles\n"
+printf "${LIGHT_CYAN}├─${RESET} ${BLUE}${BOLD}${UNDERLINE}https://github.com/kevinSuttle/macOS-Defaults${RESET}\n";
+printf "${LIGHT_CYAN}└─${RESET} ${BLUE}${BOLD}${UNDERLINE}https://medium.com/@notrab/friendly-os-x-defaults-d7f0cc39f2b3${RESET}\n";
+echo "";
+echo "🥰 Thank you to everyone who is sharing these kinds of things, it helps a lot 🥰";
+echo "";
+echo "Okay so this script takes care of the following:";
+printf "${LIGHT_CYAN}├─${RESET} System preferences and macOS Defaults\n";
+printf "${LIGHT_CYAN}├─${RESET} Dev environment setup\n";
+printf "${LIGHT_CYAN}└─${RESET} Application and tool installation\n";
+echo "";
+echo "☠️ This is the first iteration of this script and it's far from perfect. HOPE IT GOES OKAY☠️";
+echo "";
+
+printf "${LIGHT_CYAN}├─${RESET} Close any open System Preferences panes... ";
+osascript -e 'tell application "System Preferences" to quit'
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Hey Mikey, whats the admin password?\n";
+sudo -v
+
+printf "${LIGHT_CYAN}├─${RESET} update existing `sudo` time stamp until we're done here :0...";
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+echo "⚙️ General System Preferences!⚙️ ";
+
+printf "${LIGHT_CYAN}├─${RESET} Setting this computer's name... ";
+sudo scutil --set ComputerName "MikeBookPro"
+sudo scutil --set HostName "MikeBookPro"
+sudo scutil --set LocalHostName "MikeBookPro"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "MikeBookPro"
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Disable audio on boot... ";
+sudo nvram SystemAudioVolume=" ";
+printf "${LIGHT_GREEN}✓${RESET}\n";
+ 
+printf "${LIGHT_CYAN}├─${RESET} Configure login screen text... ";
+defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText -string "Hello! Welcome to tha MikeBook Pro! Time to login I guess? (^:";
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Configure password prompt after screen saver/display sleep... ";
+defaults write com.apple.screensaver askForPassword -int 1;
+defaults write com.apple.screensaver askForPasswordDelay -int 0;
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Disable hibernation... ";
+sudo pmset -a hibernatemode 0
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Allow apps which were installed from the web to launch... ";
+defaults write com.apple.LaunchServices LSQuarantine -bool false;
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Only show scroll bars when scrolling... ";
+defaults write NSGlobalDomain AppleShowScrollBars -string WhenScrolling
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Automatically quit printer app once the print jobs complete... ";
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Disable automatic termination of inactive apps... ";
+defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Disable the crash reporter... ";
+defaults write com.apple.CrashReporter DialogType -string "none"
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Reveal admin host info in the login window... ";
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Automatically quit printer app once the print jobs complete... ";
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Set language and text formats... ";
+defaults write NSGlobalDomain AppleLanguages -array "en" "nl"
+defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=AUD"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleMetricUnits -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Setting Terminal preferences... ";
+defaults write com.apple.screencapture type -string "png"
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Enable “focus follows mouse” for Terminal and all X11 apps... ";
+defaults write com.apple.terminal FocusFollowsMouse -bool true;
+defaults write org.x.X11 wm_ffm -bool true;
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} UTF-8 encoding in Terminal... ";
+defaults write com.apple.terminal StringEncodings -array 4;
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Enable Secure Keyboard Entry in Terminal... ";
+defaults write com.apple.terminal SecureKeyboardEntry -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  └──${RESET} Disable the annoying line marks... ";
+defaults write com.apple.Terminal ShowLineMarks -int 0
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Finder and other things to do with files... ";
+defaults write com.apple.screencapture type -string "png"
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Set sidebar icon size to small... ";
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Expand save panel by default... ";
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Save screenshots in PNG format... ";
+defaults write com.apple.screencapture type -string "png"
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Set ${HOME} as the default location for new Finder windows... ";
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Show hidden files by default... ";
+defaults write com.apple.finder AppleShowAllFiles -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_GRAY}│  ├─${RESET} Show all files in Finder... ";
+defaults write com.apple.finder AppleShowAllFiles YES;
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Show all filename extensions... ";
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Show status bar... ";
+defaults write com.apple.finder ShowStatusBar -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Show path bar... ";
+defaults write com.apple.finder ShowPathbar -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} ... ";
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Search the current folder by default... ";
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Disable the warning when changing a file extension... ";
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Avoid creating .DS_Store files on network or USB volumes... ";
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Use Column view in all Finder windows by default... ";
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Show the /Volumes folder... ";
+sudo chflags nohidden /Volumes
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  └─${RESET} Disable the warning before emptying the Trash... ";
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Time to configure the Dock and Mission Control and stuff!";
+printf "${LIGHT_CYAN}│  ├─${RESET} Set the icon size of Dock items to 36 pixels... ";
+defaults write com.apple.dock tilesize -int 36
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Autohide dock... ";
+defaults write com.apple.dock autohide -bool true;
+defaults write com.apple.dock autohide-time-modifier -float 0.5;
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Don’t show recent applications in Dock... ";
+defaults write com.apple.dock show-recents -bool false
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Minimize windows into their application’s icon... ";
+defaults write com.apple.dock minimize-to-application -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Enable highlight hover effect for the grid view of a stack (Dock)... ";
+defaults write com.apple.dock mouse-over-hilite-stack -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Show indicator lights for open applications in the Dock... ";
+defaults write com.apple.dock show-process-indicators -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Don’t group windows by application in Mission Control... ";
+defaults write com.apple.dock expose-group-by-app -bool false
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Don’t automatically rearrange Spaces based on most recent use... ";
+defaults write com.apple.dock mru-spaces -bool false
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Speed up Mission Control animations... ";
+defaults write com.apple.dock expose-animation-duration -float 0.1
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Disable Dashboard... ";
+defaults write com.apple.dashboard mcx-disabled -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  └─${RESET} Don’t show Dashboard as a Space... ";
+defaults write com.apple.dock dashboard-in-overlay -bool true
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Checking for Magic Keyboard... ";
+BTK_BATTERY_PERCENT=$(ioreg -c AppleBluetoothHIDKeyboard |grep '"BatteryPercent" =');
+RESULT=$?;
+printf "${LIGHT_GREEN}✓${RESET}\n";
+if [ $RESULT -eq 0 ]; then
+  printf "${LIGHT_CYAN}│  ├─${RESET} Found Magic Keyboard, configuring stuff... ";
+  # Add Magic Keyboard battery to PS1
+  printf "${LIGHT_GREEN}✓${RESET}\n";
+elif [ $RESULT -eq 1 ]; then
+  printf "${LIGHT_CYAN}│  └─${RESET} No Magic Keyboard found, moving on\n";
+fi
+
+printf "${LIGHT_CYAN}├─${RESET} Setting defaults for built-in trackpad\n";...";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Reduce key repeat interval... ";
+defaults write NSGlobalDomain KeyRepeat -int 0.02;
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Increase key repeat trigger interval... ";
+defaults write NSGlobalDomain InitialKeyRepeat -int 12;
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Disable automatic capitalization ... ";
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Assigning caps lock key to control...";
+hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000E0}]}'
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Checking for Magic Trackpad... ";
+MTP_BATTERY_PERCENT=$(ioreg -c BNBTrackpadDevice | grep '"BatteryPercent" =');
+RESULT=$?;
+printf "${LIGHT_GREEN}✓${RESET}\n";
+if [ $RESULT -eq 0 ]; then
+  printf "${LIGHT_CYAN}│  ├─${RESET} Found Magic Trackpad, configuring stuff... ";
+  # Add Magic Trackpad battery to PS1
+  printf "${LIGHT_GREEN}✓${RESET}\n";
+elif [ $RESULT -eq 1 ]; then
+  printf "${LIGHT_CYAN}│  └─${RESET} No Magic Trackpad found, moving on\n"
+fi
+
+printf "${LIGHT_CYAN}├─${RESET} Setting defaults for built-in trackpad\n";...";
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  └─${RESET} Enable tap to click for this user and for the login screen... ";
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Setting Spotlight preferences... ";
+defaults write com.apple.screencapture type -string "png"
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Disable Spotlight indexing for any volume that gets mounted... ";
+# btw use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
+sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Change indexing order and disable some search results... ";
+defaults write com.apple.spotlight orderedItems -array \
+	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
+	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+	'{"enabled" = 1;"name" = "DIRECTORIES";}' \
+	'{"enabled" = 1;"name" = "PDF";}' \
+	'{"enabled" = 1;"name" = "FONTS";}' \
+	'{"enabled" = 0;"name" = "DOCUMENTS";}' \
+	'{"enabled" = 0;"name" = "MESSAGES";}' \
+	'{"enabled" = 0;"name" = "CONTACT";}' \
+	'{"enabled" = 0;"name" = "EVENT_TODO";}' \
+	'{"enabled" = 0;"name" = "IMAGES";}' \
+	'{"enabled" = 0;"name" = "BOOKMARKS";}' \
+	'{"enabled" = 0;"name" = "MUSIC";}' \
+	'{"enabled" = 0;"name" = "MOVIES";}' \
+	'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
+	'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
+	'{"enabled" = 0;"name" = "SOURCE";}' \
+	'{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
+	'{"enabled" = 0;"name" = "MENU_OTHER";}' \
+	'{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
+	'{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
+	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
+	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}';
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Load new settings before rebuilding the index... ";
+killall mds > /dev/null 2>&1
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Make sure indexing is enabled for the main volume... ";
+sudo mdutil -i on / > /dev/null
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  └─${RESET} Rebuild the index from scratch... ";
+sudo mdutil -E / > /dev/null
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}├─${RESET} Time for everything to die!";
+printf "${LIGHT_CYAN}│  ├─${RESET} Bye bye Spotlight (mdutils)... ";
+sudo mdutil -i on / > /dev/null
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Okay actually bye bye Spotlight (mds)... ";
+killall mds > /dev/null 2>&1
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Bye bye Finder... ";
+killall Finder
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Bye bye Dock... ";
+killall Dock
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Bye bye Terminal... ";
+killall Terminal
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+printf "${LIGHT_CYAN}│  ├─${RESET} Bye bye SystemUIServer... ";
+killall SystemUIServer
+printf "${LIGHT_GREEN}✓${RESET}\n";
+
+killall Finder;
+killall Dock;
+killall Terminal;
+killall SystemUIServer;
+
+# TODO:
+# - Dont assume it's a laptop, run $(sysctl -n hw.model | grep MacBook) to find out
+#
+# - Add this function to your profile:
+#   `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
+#   the `.git` directory, listing directories first. The output gets piped into
+#   `less` with options to preserve color and line numbers, unless the output is
+#   small enough for one screen.
+#
+#   function tre() {
+#       tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+#   }
+
+# Alternative to mapping capslock to control 
+# Set ProductID of Internal Keyboard
+# let $(ioreg -r -c AppleEmbeddedKeyboard | grep ProductID | tr -d '| "')
+# let $(ioreg -r -c AppleEmbeddedKeyboard | grep VendorID | tr -d '| "')
+# defaults -currentHost write -g com.apple.keyboard.modifiermapping.$VendorID-$ProductID-0 -array-add #'<dict><key>HIDKeyboardModifierMappingDst</key><integer>-1</integer><key>HIDKeyboardModifierMappingSrc</key><integer>0</#integer></dict>';

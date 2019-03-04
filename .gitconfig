@@ -1,0 +1,13 @@
+[core]
+  excludesfile = ~/.gitignore_global
+  editor = /usr/bin/vim
+
+[commit]
+  template = ~/.gitCommitMessage
+
+[user]
+  name = Mikey Battiston
+  email = mikeydevops@gmail.com
+
+[credential "https://github.com"]
+  username = mikey-
