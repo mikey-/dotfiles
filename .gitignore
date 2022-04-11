@@ -1,16 +1,41 @@
-.atom-build.json
-*/enabled/*
-.DS_Store
+
+# Directories
+
+.httpie/sessions/
+.ssh/keys/
+*/enabled/
 custom/*
-!custom/example.bash
-.rvmrc
-aliases/custom.aliases.bash
-completion/custom.completion.bash
-lib/custom.bash
-plugins/custom.plugins.bash
+.gem/
+.aws/
+.atom/
+
+# File types
+
 *.swp
 .*.un~
-bats
-.idea
-node_modules/
+
+# Specific files
+completion/custom.completion.bash
+aliases/custom.aliases.bash
+plugins/custom.plugins.bash
+lib/custom.bash
+.atom-build.json
 .DS_Store
+.rvmrc
+.idea
+bats
+
+# Don't ignore
+!custom/example.bash
+!.aws/credentials.example
+!.aws/config.example
+!.aws/scripts/
+!.aws/shell/awsshellrc
+!.atom/apm-package-list.txt
+!.atom/.apmrc
+!.atom/config.cson
+!.atom/github.cson
+!.atom/keymap.cson
+!.atom/projects.cson
+!.atom/snippets.cson
+!.atom/.apm/.apmrc

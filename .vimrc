@@ -1,38 +1,87 @@
-set nocompatible                " choose no compatibility with legacy vi
-set number                      " add line numbers
-syntax enable
+
+"𐀏≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈𐀏"
+"𐀏 •••••• Config Explanation ••••• 𐀏"
+"𐀏≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈𐀏"
+"
+"𐀏≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈𐀏"
+"𐀏 •••••••• Basic Config ••••••••• 𐀏"
+"𐀏≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈𐀏"
+"𐀏≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈𐀏"
+"𐀏 •• No legacy vi compatibility   𐀏"
+"𐀏 •• Display line numbers         𐀏"
+"𐀏 •• Display invisibles           𐀏"
+"𐀏 •• Enable syntax highlighting   𐀏"
+"𐀏 •• Display incomplete commands  𐀏"
+"𐀏 •• Use unnamed clipboard        𐀏"
+"𐀏 •• Load filetype plugins        𐀏"
+"𐀏 •• Always show ruler            𐀏"
+"𐀏 •• Display completion matches   𐀏"
+"𐀏 •• Text width is 79 chars       𐀏"
+"𐀏≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈𐀏"
+"𐀏 •••••• Whitespace Config •••••• 𐀏"
+"𐀏≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈𐀏"
+"𐀏≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈𐀏"
+"𐀏 •• Do not wrap lines            𐀏"
+"𐀏 •• Use spaces instead tabs      𐀏"
+"𐀏 •• Display tabs as 2 spaces     𐀏"
+"𐀏 •• Backspace everything in :i   𐀏"
+"𐀏≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈𐀏"
+"𐀏 ••••••• Unused Config ••••••••••• 𐀏"
+"𐀏≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈𐀏"
+" filetype off
+" set syntax=ON
+" set nowrap
+"
+set syntax=on
+set wildmenu
+set ruler
+set nocompatible
+set number
+set list
 set encoding=utf-8
-set showcmd                     " display incomplete commands
+set showcmd
 set clipboard=unnamed
-filetype off                    " required
-"filetype plugin indent on       " load file type plugins + indentation
-
-"" Whitespace
-set nowrap                      " don't wrap lines
-set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
-set expandtab                   " use spaces, not tabs (optional)
-set backspace=indent,eol,start  " backspace through everything in insert mode
-
-"" Searching
-set hlsearch                    " highlight matches
-set incsearch                   " incremental searching
-set ignorecase                  " searches are case insensitive...
-set smartcase                   " ... unless they contain at least one capital letter
-
+set expandtab
+set tabstop=2 shiftwidth=2
+set backspace=indent,eol,start
+set textwidth=79
 set cursorline   " highlight current line
 set cursorcolumn " highlight current column
+set hlsearch     " highlight matches
+set incsearch    " incremental searching
+set ignorecase   " searches are case insensitive...
+set smartcase    " ... unless they contain at least one capital letter
+
+filetype plugin on
+filetype plugin indent on
+
+if has('mouse')
+  set mouse=a
+endif
+
+command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+         \ | wincmd p | diffthis
+
+set guifont=DejaVuSansMono:h20
+set laststatus=2
+set background=dark
+"
+"map Ctrl+n to toggle NERDTree
+map <C-n> :NERDTreeToggle<CR>
+map <C-Tab> :tabn<CR>
+map <C-S-Tab> :tabp<CR>
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
-let g:vim_json_syntax_conceal = 0
- 
+
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-  
+
 " let Vundle manage Vundle, required
-"Plugin 'https://github.com/bronson/vim-crosshairs'
-"altercation/solarized'
+Plugin 'https://github.com/bronson/vim-crosshairs'
+Plugin 'altercation/solarized'
 Plugin 'hashivim/vim-terraform'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'mileszs/ack.vim'
@@ -52,15 +101,15 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'elzr/vim-json'
 Plugin 'rizzatti/dash.vim'
 Plugin 'JamshedVesuna/vim-markdown-preview'
-"Plugin 'Valloric/YouCompleteMe' 
-"YouCompleteMe requires more work for osx (https://github.com/Valloric/YouCompleteMe#installation)
+" Plugin 'Valloric/YouCompleteMe'
+" YouCompleteMe requires more work for osx
+" See https://github.com/Valloric/YouCompleteMe#installation
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
+"Plugins must be added before the following line
+call vundle#end()
+
+" To ignore plugin indent changes, use 'filetype plugin on'
+
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just
@@ -70,19 +119,18 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-let vim_markdown_preview_github=1
+
+let g:ackprg='ag --vimgrep' "use Ag with [ack.vim][]
+let g:vim_markdown_preview_github=1
+let g:vim_markdown_folding_disabled=1
+let g:vim_json_syntax_conceal=0
 let g:solarized_termcolors=256
-syntax enable
-set guifont=DejaVuSansMono:h17
-set background=dark
+let g:solarized_termtrans=1
+let g:solarized_contrast='normal'
+let g:solarized_visibility='high'
+let g:foldmethod='marker'
+let NERDTreeShowHidden=1
+
 colorscheme solarized
-set laststatus=2
+syntax enable
 
-let g:vim_markdown_folding_disabled = 1
-
-"map Ctrl+n to toggle NERDTree
-map <C-n> :NERDTreeToggle<CR>
-map <C-Tab> :tabn<CR>
-map <C-S-Tab> :tabp<CR>
-
-let g:ackprg = 'ag --vimgrep' "use Ag with [ack.vim][]

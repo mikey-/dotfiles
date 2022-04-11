@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Bell</key>
+	<false/>
+	<key>BellBounceCritical</key>
+	<true/>
+	<key>BookmarkRestorations</key>
+	<false/>
+	<key>CommandString</key>
+	<string></string>
+	<key>ConvertNewlinesOnPaste</key>
+	<false/>
+	<key>Font</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
+	YXNzI0AmAAAAAAAAEBCAAoADXlNGTW9uby1SZWd1bGFy0hMUFRZaJGNsYXNzbmFtZVgk
+	Y2xhc3Nlc1ZOU0ZvbnSiFRdYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRGhtUcm9v
+	dIABCBEaIy0yNzxCS1JbYmlydHZ4h4yXoKeqs8XIzQAAAAAAAAEBAAAAAAAAABwAAAAA
+	AAAAAAAAAAAAAADP
+	</data>
+	<key>FontAntialias</key>
+	<true/>
+	<key>FontWidthSpacing</key>
+	<real>1.004032258064516</real>
+	<key>ProfileCurrentVersion</key>
+	<real>2.0600000000000001</real>
+	<key>RunCommandAsShell</key>
+	<true/>
+	<key>ScrollbackLines</key>
+	<integer>300</integer>
+	<key>ShouldLimitScrollback</key>
+	<integer>1</integer>
+	<key>ShouldRestoreContent</key>
+	<false/>
+	<key>ShowActiveProcessArgumentsInTitle</key>
+	<false/>
+	<key>ShowActiveProcessInTitle</key>
+	<true/>
+	<key>ShowCommandKeyInTitle</key>
+	<true/>
+	<key>ShowDimensionsInTitle</key>
+	<false/>
+	<key>ShowRepresentedURLPathInTitle</key>
+	<false/>
+	<key>ShowShellCommandInTitle</key>
+	<false/>
+	<key>ShowTTYNameInTitle</key>
+	<false/>
+	<key>ShowWindowSettingsNameInTitle</key>
+	<true/>
+	<key>VisualBell</key>
+	<false/>
+	<key>columnCount</key>
+	<integer>180</integer>
+	<key>name</key>
+	<string>mikey-terminal</string>
+	<key>rowCount</key>
+	<integer>50</integer>
+	<key>type</key>
+	<string>Window Settings</string>
+</dict>
+</plist>

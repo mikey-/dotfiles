@@ -1,13 +1,33 @@
 [core]
-  excludesfile = ~/.gitignore_global
-  editor = /usr/bin/vim
+	excludesfile = /Users/mbattiston/.gitignore_global
+	editor = atom --wait
 
 [commit]
-  template = ~/.gitCommitMessage
+	template = ${HOME}/.gitCommitMessage
+
+[diff]
+	renames = true
 
 [user]
-  name = Mikey Battiston
-  email = mikeydevops@gmail.com
+	name = mikey
+	email = mikeydevops@gmail.com
 
 [credential "https://github.com"]
-  username = mikey-
+	helper = osxkeychain
+
+[credential "http://bitbucket.org"]
+	helper = osxkeychain
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

@@ -1,0 +1,7 @@
+.config.d
+.function.d
+.alias.d
+.export.d
+.path.d
+.script.d
+.iterm2_shell_integration.bash

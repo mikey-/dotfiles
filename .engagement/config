@@ -1,3 +1,0 @@
-DIRS:repos diary documents scripts tmp .ssh/keys scripts/aliases scripts/functions
-FILES:.ssh/config documents/todo scripts/aliases/ssh
-FILE_CONTENT:scripts/aliases/ssh|alias $ENGAGEMENT_NAME-ssh='ssh -F $ENGAGEMENT_DIR/.ssh/config'

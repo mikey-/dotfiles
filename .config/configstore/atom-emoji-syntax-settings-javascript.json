@@ -1,0 +1,87 @@
+{
+	"active": true,
+	"import": {
+		"active": true,
+		"emoji": "📦",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"export": {
+		"active": true,
+		"emoji": "📦",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"default": {
+		"active": true,
+		"emoji": "🔸",
+		"pseudo": "after",
+		"spacing": true
+	},
+	"class": {
+		"active": true,
+		"emoji": "🏷",
+		"pseudo": "after",
+		"spacing": false
+	},
+	"delete": {
+		"active": true,
+		"emoji": "💣",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"function": {
+		"active": true,
+		"emoji": "🔧",
+		"pseudo": "after",
+		"spacing": false
+	},
+	"arrow": {
+		"active": true,
+		"emoji": "🔧",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"typeof": {
+		"active": true,
+		"emoji": "🔬",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"instanceof": {
+		"active": true,
+		"emoji": "🔬",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"yield": {
+		"active": true,
+		"emoji": "📣",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"console": {
+		"active": true,
+		"emoji": "🚧",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"method": {
+		"active": true,
+		"emoji": "🔮",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"const": {
+		"active": true,
+		"emoji": "💎",
+		"pseudo": "after",
+		"spacing": true
+	},
+	"var": {
+		"active": true,
+		"emoji": "🌀",
+		"pseudo": "after",
+		"spacing": true
+	}
+}

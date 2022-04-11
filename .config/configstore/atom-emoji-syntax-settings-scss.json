@@ -1,0 +1,45 @@
+{
+	"active": true,
+	"@mixin": {
+		"active": true,
+		"emoji": "✨",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"@for": {
+		"active": true,
+		"emoji": "👟",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"@each": {
+		"active": true,
+		"emoji": "👣",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"@font-face": {
+		"active": true,
+		"emoji": "📖",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"@keyframes": {
+		"active": true,
+		"emoji": "📹",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"@function": {
+		"active": true,
+		"emoji": "🔧",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"@while": {
+		"active": true,
+		"emoji": "🕯",
+		"pseudo": "before",
+		"spacing": true
+	}
+}

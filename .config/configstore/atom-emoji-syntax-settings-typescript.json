@@ -1,0 +1,69 @@
+{
+	"active": true,
+	"import": {
+		"active": true,
+		"emoji": "📥",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"export": {
+		"active": true,
+		"emoji": "📤",
+		"pseudo": "after",
+		"spacing": false
+	},
+	"class": {
+		"active": true,
+		"emoji": "🏷",
+		"pseudo": "after",
+		"spacing": false
+	},
+	"function": {
+		"active": true,
+		"emoji": "🔧",
+		"pseudo": "after",
+		"spacing": false
+	},
+	"method": {
+		"active": true,
+		"emoji": "🔧",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"interface": {
+		"active": true,
+		"emoji": "🎛",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"variables": {
+		"active": true,
+		"emoji": "💎",
+		"pseudo": "after",
+		"spacing": true
+	},
+	"typeof": {
+		"active": true,
+		"emoji": "🔬",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"instanceof": {
+		"active": true,
+		"emoji": "🔬",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"console": {
+		"active": true,
+		"emoji": "🚧",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"namespace": {
+		"active": true,
+		"emoji": "🔖",
+		"pseudo": "before",
+		"spacing": true
+	}
+}

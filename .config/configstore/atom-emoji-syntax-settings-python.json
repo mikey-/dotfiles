@@ -1,0 +1,33 @@
+{
+	"active": true,
+	"import": {
+		"active": true,
+		"emoji": "📦",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"def": {
+		"active": true,
+		"emoji": "🔧",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"class": {
+		"active": true,
+		"emoji": "🏷",
+		"pseudo": "after",
+		"spacing": false
+	},
+	"global": {
+		"active": true,
+		"emoji": "🌍",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"nonlocal": {
+		"active": true,
+		"emoji": "🌍",
+		"pseudo": "before",
+		"spacing": true
+	}
+}

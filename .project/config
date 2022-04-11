@@ -1,0 +1,7 @@
+DIRS:repos diary documents scripts tmp .ssh/keys scripts/aliases scripts/functions
+FILES:.ssh/config documents/todo scripts/aliases/ssh
+FILE_CONTENT:scripts/aliases/ssh|$PROJECT_NAME-ssh=ssh -F $PROJECT_DIR/.ssh/config
+FILE_CONTENT:scripts/aliases/test|$PROJECT_NAME-test=ssh -F $PROJECT_DIR/.ssh/config
+FILE_CONTENT:scripts/aliases/test-two|$PROJECT_NAME-testt=ssh -F $PROJECT_DIR/.ssh/config
+FILE_CONTENT:scripts/aliases/test-three|$PROJECT_NAME-testth=ssh -F $PROJECT_DIR/.ssh/config
+FILE_CONTENT:scripts/aliases/test-four|$PROJECT_NAME-testf=ssh -F $PROJECT_DIR/.ssh/config

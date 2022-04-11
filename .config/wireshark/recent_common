@@ -1,0 +1,92 @@
+# Recent settings file for Wireshark 3.0.3.
+#
+# This file is regenerated each time Wireshark is quit.
+# So be careful, if you want to make manual changes here.
+
+######## Recent capture files (latest last), cannot be altered through command line ########
+
+recent.capture_file: /private/var/tmp/mikeBookPro_ch161_2021-02-24_19.25.20.825.pcap
+
+######## Recent capture filters (latest last), cannot be altered through command line ########
+
+
+######## Recent display filters (latest last), cannot be altered through command line ########
+
+recent.display_filter: dns
+recent.display_filter: port
+recent.display_filter: port=53
+recent.display_filter: port=53, ip
+recent.display_filter: port=53, dns
+
+# Main window geometry.
+# Decimal numbers.
+gui.geometry_main_x: 1941
+gui.geometry_main_y: 114
+gui.geometry_main_width: 1509
+gui.geometry_main_height: 664
+
+# Main window maximized.
+# TRUE or FALSE (case-insensitive).
+gui.geometry_main_maximized: FALSE
+
+# Statusbar left pane size.
+# Decimal number.
+gui.geometry_status_pane: 250
+
+# Statusbar middle pane size.
+# Decimal number.
+gui.geometry_status_pane_right: 250
+
+# Last used Configuration Profile.
+gui.last_used_profile: Default
+
+# WLAN statistics upper pane size.
+# Decimal number.
+gui.geometry_status_wlan_stats_pane: 200
+
+# Warn if running with elevated permissions (e.g. as root).
+# TRUE or FALSE (case-insensitive).
+privs.warn_if_elevated: TRUE
+
+# Warn if npf.sys isn't loaded on Windows >= 6.0.
+# TRUE or FALSE (case-insensitive).
+privs.warn_if_no_npf: TRUE
+
+# Geometry and maximized state of PreferencesDialog window.
+# Decimal integers.
+gui.geom.PreferencesDialog.x: -1290
+gui.geom.PreferencesDialog.y: -435
+gui.geom.PreferencesDialog.width: 680
+gui.geom.PreferencesDialog.height: 475
+# TRUE or FALSE (case-insensitive).
+gui.geom.PreferencesDialog.maximized: FALSE
+
+# Geometry and maximized state of PacketDialog window.
+# Decimal integers.
+gui.geom.PacketDialog.x: 2082
+gui.geom.PacketDialog.y: 141
+gui.geom.PacketDialog.width: 1207
+gui.geom.PacketDialog.height: 531
+# TRUE or FALSE (case-insensitive).
+gui.geom.PacketDialog.maximized: FALSE
+
+# Geometry and maximized state of WlanStatisticsDialog window.
+# Decimal integers.
+gui.geom.WlanStatisticsDialog.x: -926
+gui.geom.WlanStatisticsDialog.y: -373
+gui.geom.WlanStatisticsDialog.width: 731
+gui.geom.WlanStatisticsDialog.height: 412
+# TRUE or FALSE (case-insensitive).
+gui.geom.WlanStatisticsDialog.maximized: FALSE
+
+# Custom colors.
+# List of custom colors selected in Qt color picker.
+gui.custom_colors: 
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff"

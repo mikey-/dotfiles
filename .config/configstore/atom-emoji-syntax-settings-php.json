@@ -1,0 +1,39 @@
+{
+	"active": true,
+	"function": {
+		"active": true,
+		"emoji": "🔧",
+		"pseudo": "after",
+		"spacing": false
+	},
+	"output": {
+		"active": true,
+		"emoji": "📰",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"namespace": {
+		"active": true,
+		"emoji": "🔖",
+		"pseudo": "before",
+		"spacing": true
+	},
+	"interface": {
+		"active": true,
+		"emoji": "💿",
+		"pseudo": "after",
+		"spacing": true
+	},
+	"include": {
+		"active": true,
+		"emoji": "📥",
+		"pseudo": "after",
+		"spacing": true
+	},
+	"goto": {
+		"active": true,
+		"emoji": "🚀",
+		"pseudo": "after",
+		"spacing": true
+	}
+}

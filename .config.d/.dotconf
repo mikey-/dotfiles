@@ -1,0 +1,64 @@
+#!/bin/env/bash
+
+# export DOTFILE_ROOT="${HOME}\.dot\..*\.d";
+# export DOTFILE_SOURCE_EXPRESSION="${HOME}\.dot\..*\.d";
+# export FUNCTIONS_DIR="";
+# export EXPORTS_DIR="";
+# export HELPER_DIR="";
+# export LINKS_DIR="";
+# export ALIAS_DIR="";
+# export PATH_DIR="";
+#
+# INIT_PROCESS=("$(source) ${DOTFILE_ROOT}");
+
+# DOTFILES TO LINK
+# .aws
+# .gem
+# .gvm
+# .npm
+# .nvm
+# .rvm
+# .vim
+# .ssh
+# .atom
+# .mume
+# .cargo
+# .julia
+# .local
+# .npmrc
+# .pyenv
+# .vimrc
+# .bundle
+# .config
+# .docker
+# .httpie
+# .path.d
+# .condarc
+# .dotfile
+# .ipython
+# .jupyter
+# .lesshst
+# .alias.d
+# .config.d
+# .export.d
+# .Brewfile
+# .pygments
+# .script.d
+# .dotignore
+# .gitconfig
+# .gitignore
+# .project
+# .function.d
+# .platformio
+# .subversion
+# .ruby-version
+# .bash_profile
+# .wakatime.cfg
+# .hgignore_global
+# .gitCommitMessage
+# .gitignore_global
+# .ipynb_checkpoints
+# .mikey.itermcolors
+# .iterm.profile.json
+# .terminal.mikey.terminal
+# .iterm2_shell_integration.bash

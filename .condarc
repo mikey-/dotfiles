@@ -1,0 +1,115 @@
+######################################################
+##              Channel Configuration               ##
+######################################################
+
+#allow_non_channel_urls: true
+#override_channels_enable: true
+
+#channel_alias: https://conda.anaconda.org
+
+channels:
+  - defaults
+  - ortegas
+#  - conda-other
+
+default_channels:
+  - conda-forge
+  - main
+
+# custom_channels:
+#   r: https://repo.anaconda.com/pkgs
+#   pro: https://repo.anaconda.com/pkgs
+#   main: https://repo.anaconda.com/pkgs
+#   free: https://repo.anaconda.com/pkgs
+#   archive: https://repo.anaconda.com/pkgs
+
+# custom_multichannels:
+#   conda-other:
+#     - r
+#     - pro
+#     - free
+#     - archive
+#   nodejs.org:
+#     - https://nodejs.org
+
+# subdir:
+# subdirs:
+#   - dist
+#   - osx-64
+#   - noarch
+
+# repodata_fns:
+#   - index.json
+#   - repodata.json
+#   - current_repodata.json
+
+# repodata_threads: 5
+
+
+######################################################
+##            Basic Conda Configuration             ##
+######################################################
+
+envs_dirs:
+  - ${HOME}/miniconda3/envs
+  - ${HOME}/.conda/envs
+pkgs_dirs:
+  - ${HOME}/miniconda3/pkgs
+  - ${HOME}/.conda/pkgs
+
+
+######################################################
+##              Network Configuration               ##
+######################################################
+
+remote_read_timeout_secs: 120.0
+remote_connect_timeout_secs: 5
+remote_max_retries: 5
+remote_backoff_factor: 5
+ssl_verify: false
+
+######################################################
+##               Solver Configuration               ##
+######################################################
+
+aggressive_update_packages:
+  - ca-certificates
+  - certifi
+  - openssl
+auto_update_conda: true
+channel_priority: flexible
+pinned_packages: []
+pip_interop_enabled: true
+track_features: []
+
+######################################################
+##  Package Linking and Install-time Configuration  ##
+######################################################
+
+allow_softlinks: false
+always_copy: false
+always_softlink: false
+path_conflict: clobber
+rollback_enabled: true
+safety_checks: disabled
+extra_safety_checks: false
+shortcuts: true
+non_admin_enabled: true
+
+# ######################################################
+# ##  Output, Prompt, and Flow Control Configuration  ##
+# ######################################################
+
+always_yes: true
+auto_activate_base: true
+changeps1: false
+env_prompt: ''
+json: false
+notify_outdated_conda: true
+quiet: true
+report_errors: false
+show_channel_urls: true
+verbosity: 0
+unsatisfiable_hints: true
+unsatisfiable_hints_check_depth: 3
+allow_conda_downgrades: false
