@@ -64,7 +64,7 @@ remote_read_timeout_secs: 120.0
 remote_connect_timeout_secs: 5
 remote_max_retries: 5
 remote_backoff_factor: 5
-ssl_verify: false
+ssl_verify: true
 
 ######################################################
 ##               Solver Configuration               ##
