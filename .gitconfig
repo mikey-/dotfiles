@@ -3,7 +3,7 @@
 	editor = atom --wait
 
 [commit]
-	template = ${HOME}/.gitCommitMessage
+	template = /Users/mbattiston/.gitCommitMessage
 
 [diff]
 	renames = true
@@ -26,8 +26,7 @@
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
 
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Users/mbattiston/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
