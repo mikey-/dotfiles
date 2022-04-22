@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function link-dotfiles () {
+function link_dotfiles () {
 
   ln -fns ${DEFAULT_DOTFILE_DIR}/.aws ${DOTFILE_DIR}/.aws
   ln -fns ${DEFAULT_DOTFILE_DIR}/.gem ${DOTFILE_DIR}/.gem
