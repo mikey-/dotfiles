@@ -51,10 +51,8 @@ default_channels:
 ######################################################
 
 envs_dirs:
-  - ${HOME}/miniconda3/envs
   - ${HOME}/.conda/envs
 pkgs_dirs:
-  - ${HOME}/miniconda3/pkgs
   - ${HOME}/.conda/pkgs
 
 
