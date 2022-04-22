@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 
-#[ -s "${HOME}/.nvm/nvm.sh" ] && source "${HOME}/.nvm/nvm.sh"  # This loads nvm
-#[ -s "${HOME}/.nvm/bash_completion" ] && source "${HOME}/.nvm/bash_completion"  # This loads nvm bash_completion
-
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
