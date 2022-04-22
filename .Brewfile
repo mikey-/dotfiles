@@ -3,12 +3,12 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
-tap "jmespath/jmespath"
 tap "teamookla/speedtest"
 tap "toonetown/homebrew-xcode"
 #
 cask "atom", args: { appdir: "~/Applications" }
 cask "ableton-live-suite10", args: { appdir: "~/Applications" }
+cask "battle-net", args: { appdir: "~/Applications" }
 cask "discord", args: { appdir: "~/Applications" }
 cask "dropbox", args: { appdir: "~/Applications" }
 cask "github", args: { appdir: "~/Applications" }
@@ -17,7 +17,6 @@ cask "macvim", args: { appdir: "~/Applications" }
 cask "session-manager-plugin", args: { appdir: "~/Applications" }
 cask "sourcetree", args: { appdir: "~/Applications" }
 cask "spotify", args: { appdir: "~/Applications" }
-cask "virtualbox", args: { appdir: "~/Applications" }
 cask "vivaldi", args: { appdir: "~/Applications" }
 cask "whatsapp", args: { appdir: "~/Applications" }
 cask "alacritty", args: { appdir: "~/Applications" }
@@ -27,8 +26,9 @@ cask "iterm2", args: { appdir: "~/Applications" }
 brew "ack"
 brew "ag"
 brew "ansible"
-brew "carting"
-brew "carthage"
+brew "aws-google-auth"
+brew "awscli"
+brew "aws-shell"
 brew "cfn-lint"
 brew "cmatrix"
 brew "colordiff"
@@ -73,10 +73,14 @@ brew "yasm"
 brew "zlib"
 
 # tap "mas-cli/tap/mas"
+# tap "jmespath/jmespath/jp"
 # brew "pyenv-virtualenv"
 # brew "pyenv"
 # brew "ipython"
 # brew "gnutls"
 # brew "lsblk"
+# brew "carting"
+# brew "carthage"
 #
 # cask "xcode", args: { appdir: "~/Applications" }
+#cask "virtualbox", args: { appdir: "~/Applications" }
