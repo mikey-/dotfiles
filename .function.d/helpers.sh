@@ -20,7 +20,7 @@ function get_go_version () {
 
 function get_node_version() {
   #is_node_project && \
-  printf " %s " "$($(/usr/bin/command -v node) -v)";
+  printf " %s " "$($(/usr/bin/command -v node) -v 2>&1)";
   return 0;
 }
 
