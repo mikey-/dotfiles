@@ -9,7 +9,7 @@ function create_project () {
   if [ -n "${1}" ]; then
     PROJECT_NAME="${1}";
   else
-    echo "Project name required. Usage: create_project 'client-name'";
+    echo "Project name required. Usage: create_project 'project-name'";
     false;
     return;
   fi
@@ -21,8 +21,8 @@ function create_project () {
   if [ ! -r "${PROJECT_DIR}" ] && [ ! -d "${PROJECT_DIR}" ]; then
     PROJECT_DIR_LIST="repos diary documents scripts tmp";
     for PD in $PROJECT_DIR_LIST; do
-      echo "Creating ${PROJECT_DIR}/${ED}";
-      mkdir -p "${PROJECT_DIR}/${ED}";
+      echo "Creating ${PROJECT_DIR}/${PD}";
+      mkdir -p "${PROJECT_DIR}/${PD}";
     done
     unset PD;
     # setup a diary for the project
