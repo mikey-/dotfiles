@@ -39,3 +39,15 @@ bats
 !.atom/projects.cson
 !.atom/snippets.cson
 !.atom/.apm/.apmrc
+.config/Battle.net/Telemetry/InstallationId
+.config/iterm2/AppSupport
+.local/share/.vivaldi_reporting_data
+.npm/_cacache/*
+.npm/_logs/*
+.npm/_update-notifier-last-checked
+.nvm/.cache/*
+.nvm/alias/*
+.nvm/versions/*
+.vim/bundle/*
+.nvm/nvm.sh
+.nvm/nvm-exec
