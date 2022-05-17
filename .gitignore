@@ -1,7 +1,8 @@
 
 # Directories
-
+.docker/contexts/*
 .httpie/sessions/
+.docker/scan/*
 .ssh/keys/
 */enabled/
 custom/*
@@ -19,6 +20,7 @@ completion/custom.completion.bash
 aliases/custom.aliases.bash
 plugins/custom.plugins.bash
 lib/custom.bash
+.docker/config.json
 .atom-build.json
 .DS_Store
 .rvmrc
