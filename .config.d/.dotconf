@@ -41,7 +41,7 @@
 # .alias.d
 # .config.d
 # .export.d
-# .Brewfile
+# Brewfile
 # .pygments
 # .script.d
 # .dotignore

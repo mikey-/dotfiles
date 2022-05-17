@@ -9,6 +9,7 @@ tap "toonetown/homebrew-xcode"
 cask "atom", args: { appdir: "~/Applications" }
 cask "ableton-live-suite10", args: { appdir: "~/Applications" }
 cask "battle-net", args: { appdir: "~/Applications" }
+cask "docker", args: { appdir: "~/Applications" }
 cask "discord", args: { appdir: "~/Applications" }
 cask "dropbox", args: { appdir: "~/Applications" }
 cask "github", args: { appdir: "~/Applications" }
@@ -34,6 +35,11 @@ brew "cmatrix"
 brew "colordiff"
 brew "coreutils"
 brew "cowsay"
+brew "docker"
+brew "docker-compose"
+brew "docker-credential-helper"
+brew "docker-credential-helper-ecr"
+brew "docker-machine"
 brew "findutils"
 brew "fortune"
 brew "gitui"
@@ -48,6 +54,7 @@ brew "htop"
 brew "httpie"
 brew "imath"
 brew "jp"
+brew "jq"
 brew "libmagic"
 brew "lolcat"
 brew "mas"
@@ -81,6 +88,12 @@ brew "zlib"
 # brew "lsblk"
 # brew "carting"
 # brew "carthage"
+# brew "docker-machine"
+# brew "docker-machine-completion"
+# brew "docker-completion"
+# brew "docker-compose"
+# brew "docker-compose-completion"
+#
 #
 # cask "xcode", args: { appdir: "~/Applications" }
-#cask "virtualbox", args: { appdir: "~/Applications" }
+# cask "virtualbox", args: { appdir: "~/Applications" }

@@ -31,7 +31,7 @@ function link_dotfiles () {
   ln -fns ${DEFAULT_DOTFILE_DIR}/.alias.d ${DOTFILE_DIR}/.alias.d
   ln -fns ${DEFAULT_DOTFILE_DIR}/.config.d ${DOTFILE_DIR}/.config.d
   ln -fns ${DEFAULT_DOTFILE_DIR}/.export.d ${DOTFILE_DIR}/.export.d
-  ln -fns ${DEFAULT_DOTFILE_DIR}/.Brewfile ${DOTFILE_DIR}/.Brewfile
+  ln -fns ${DEFAULT_DOTFILE_DIR}/Brewfile ${DOTFILE_DIR}/Brewfile
   ln -fns ${DEFAULT_DOTFILE_DIR}/.pygments ${DOTFILE_DIR}/.pygments
   ln -fns ${DEFAULT_DOTFILE_DIR}/.script.d ${DOTFILE_DIR}/.script.d
   ln -fns ${DEFAULT_DOTFILE_DIR}/.dotignore ${DOTFILE_DIR}/.dotignore
