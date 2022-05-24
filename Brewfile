@@ -13,11 +13,13 @@ cask "docker", args: { appdir: "~/Applications" }
 cask "discord", args: { appdir: "~/Applications" }
 cask "dropbox", args: { appdir: "~/Applications" }
 cask "github", args: { appdir: "~/Applications" }
+cask "gog-galaxy", args: { appdir: "~/Applications" }
 cask "jqbx", args: { appdir: "~/Applications" }
 cask "macvim", args: { appdir: "~/Applications" }
 cask "session-manager-plugin", args: { appdir: "~/Applications" }
 cask "sourcetree", args: { appdir: "~/Applications" }
 cask "spotify", args: { appdir: "~/Applications" }
+cask "steam", args: { appdir: "~/Applications" }
 cask "vivaldi", args: { appdir: "~/Applications" }
 cask "whatsapp", args: { appdir: "~/Applications" }
 cask "alacritty", args: { appdir: "~/Applications" }
@@ -52,9 +54,13 @@ brew "gnu-tar"
 brew "grep"
 brew "htop"
 brew "httpie"
+brew "helm"
 brew "imath"
 brew "jp"
 brew "jq"
+brew "k9s"
+brew "kind"
+brew "kubectl"
 brew "libmagic"
 brew "lolcat"
 brew "mas"
