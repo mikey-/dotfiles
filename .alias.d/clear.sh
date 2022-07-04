@@ -20,7 +20,7 @@ function chromatic_dragon (){
 
   echo "+================================+"| lolcat -a -s 1000;
   sleep 3;
-  clear;
+  "$(which clear)" -x;
 }
 
 alias clear='chromatic_dragon';
