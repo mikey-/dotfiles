@@ -7,12 +7,9 @@
 
 #alias ptree='tree -axCFNQ --noreport --sort=mtime | lolcat';
 
-OG_TREE="$(command -v tree)";
-export OG_TREE;
+# OG_TREE="$(command -v tree)";
 
-alias ogtree='$OG_TREE';
-
-alias tree='${OG_TREE} -axCFNQ --noreport --sort=mtime';
+alias tree='tree -axCFNQ --noreport --sort=mtime';
 
 function pretty_tree () {
   printf "%s" "$(tree -axCFNQ --noreport --sort=mtime "$@" --)" | lolcat --truecolor;
