@@ -6,8 +6,11 @@ tap "homebrew/core"
 tap "teamookla/speedtest"
 tap "toonetown/homebrew-xcode"
 tap "aws/tap"
+tap "upbound/tap"
+tap "jmespath/jmespath"
 #
 cask "atom", args: { appdir: "~/Applications" }
+cask "authy", args: { appdir: "~/Applications" }
 cask "ableton-live-suite10", args: { appdir: "~/Applications" }
 cask "battle-net", args: { appdir: "~/Applications" }
 cask "docker", args: { appdir: "~/Applications" }
@@ -26,6 +29,9 @@ cask "whatsapp", args: { appdir: "~/Applications" }
 cask "alacritty", args: { appdir: "~/Applications" }
 cask "hyper", args: { appdir: "~/Applications" }
 cask "iterm2", args: { appdir: "~/Applications" }
+cask "postman", args: { appdir: "~/Applications" }
+cask "rar", args: { appdir: "~/Applications" }
+cask "vscodium", args: { appdir: "~/Applications" }
 #
 brew "ack"
 brew "ag"
@@ -57,7 +63,7 @@ brew "htop"
 brew "httpie"
 brew "helm"
 brew "imath"
-brew "jp"
+brew "jmespath/jmespath/jp"
 brew "jq"
 brew "k9s"
 brew "kind"
@@ -70,18 +76,20 @@ brew "nmap"
 brew "openapi-generator"
 brew "openssl"
 brew "packer"
+brew "p7zip"
+brew "qemu"
 brew "qt"
 brew "rain"
 brew "readline"
 brew "ruby-install"
 brew "shellcheck"
 brew "spark"
-brew "speedtest"
 brew "teamookla/speedtest/speedtest"
 brew "telnet"
 brew "terraform"
 brew "tmux"
 brew "tree"
+brew "upbound/tap/up"
 brew "watch"
 brew "wget"
 brew "yasm"
