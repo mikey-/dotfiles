@@ -1,14 +1,19 @@
 
 # Directories
-.docker/contexts/*
-.httpie/sessions/
-.docker/scan/*
+.config/configstore/
+.vim/bundle/*
 .ssh/keys/
 */enabled/
 custom/*
+.docker/
+.httpie/
 .gem/
 .aws/
 .atom/
+.npm/
+.ssh/
+.nvm/
+
 
 # File types
 
@@ -16,15 +21,23 @@ custom/*
 .*.un~
 
 # Specific files
+.config/Battle.net/Telemetry/InstallationId
+.local/share/.vivaldi_reporting_data
 completion/custom.completion.bash
 aliases/custom.aliases.bash
 plugins/custom.plugins.bash
-lib/custom.bash
+.config/iterm2/AppSupport
+.docker/.buildNodeID
 .docker/config.json
+.ssh/known_hosts*
+.docker/.token*
 .atom-build.json
+lib/custom.bash
 .DS_Store
 .rvmrc
+.npmrc
 .idea
+git
 bats
 
 # Don't ignore
@@ -41,15 +54,6 @@ bats
 !.atom/projects.cson
 !.atom/snippets.cson
 !.atom/.apm/.apmrc
-.config/Battle.net/Telemetry/InstallationId
-.config/iterm2/AppSupport
-.local/share/.vivaldi_reporting_data
-.npm/_cacache/*
-.npm/_logs/*
-.npm/_update-notifier-last-checked
-.nvm/.cache/*
-.nvm/alias/*
-.nvm/versions/*
-.vim/bundle/*
-.nvm/nvm.sh
-.nvm/nvm-exec
+!.nvm/.npmrc
+!.nvm/alias/
+!.ssh/config
