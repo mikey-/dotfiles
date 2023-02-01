@@ -14,20 +14,23 @@ function encrypt_or_decrypt () {
   EOD_OPTION \
   EOD_ERRLOG \
   EOD_COMMAND \
+  OPENSSL_COMMAND \
   INFILE_REALPATH \
   TEMP_EOD_ERRLOG \
   OUTFILE_REALPATH \
   LOCAL_ERRLOG_DIR;
 
+  OPENSSL_COMMAND="$(command -v openssl)";
+
   while getopts ":edi:lo:" EOD_OPTION; do
     case "$EOD_OPTION" in
       e)
-        EOD_COMMAND="/usr/local/opt/openssl/bin/openssl enc -aes-256-cbc -a";
+        EOD_COMMAND="${OPENSSL_COMMAND} enc -aes-256-cbc -a";
         EOD="encrypt";
         EOD_CHAIN="${EOD_CHAIN}:$EOD";
       ;;
       d)
-        EOD_COMMAND="/usr/local/opt/openssl/bin/openssl enc -aes-256-cbc -a -d";
+        EOD_COMMAND="${OPENSSL_COMMAND} enc -aes-256-cbc -a -d";
         EOD="decrypt";
         EOD_CHAIN="${EOD_CHAIN}:$EOD";
       ;;
