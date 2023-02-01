@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+function link_dotfile () {
+  ln -fns ${DEFAULT_DOTFILE_DIR}/${1} ${DOTFILE_DIR}/${1} || return 1;
+  return 0;
+}
 function link_dotfiles () {
 
   ln -fns ${DEFAULT_DOTFILE_DIR}/.aws ${DOTFILE_DIR}/.aws
