@@ -1,6 +1,6 @@
 [core]
 	excludesfile = /Users/mbattiston/.gitignore_global
-	editor = atom --wait
+	editor = zed --wait
 
 [commit]
 	template = /Users/mbattiston/.gitCommitMessage
